@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div>
+            Local DB. Users:
+            <table>
+                <tr>
+                    <td>id</td>
+                    <td>remote_id</td>
+                    <td>balance</td>
+                    <td></td>
+                </tr>
+                <ui:repeat value="#{userListLocal}" var="user">
+                    <tr>
+                        <td><h:outputText value="#{user.id}" /></td>
+                        <td><h:outputText value="#{user.remoteId}" /></td>
+                        <td><h:outputText value="#{user.balanceLocal}" /></td>
+                        <td><a href="/L9-EE-war/users/delete?id=#{user.id}">Удалить</a></td>
+                    </tr>
+                </ui:repeat> 
+            </table>
+        </div>
+        
+        <div>
+            Remote DB. Users:
+            <table>
+                <tr>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>login</td>
+                    <td>email</td>
+                </tr>
+                <ui:repeat value="#{userListRemote}" var="user">
+                    <tr>
+                        <td><h:outputText value="#{user.id}" /></td>
+                        <td><h:outputText value="#{user.name}" /></td>
+                        <td><h:outputText value="#{user.login}" /></td>
+                        <td><h:outputText value="#{user.email}" /></td>
+                    </tr>
+                </ui:repeat> 
+            </table>
+        </div>
+        <a href="/L9-EE-war/users/add">Добавить пользователя</a><br />
+        <a href="/L9-EE-war/">Главная</a>
+    </h:body>
+</html>
+

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>Добавить удаленного пользователя:</h2>
+        <form method="POST">
+            <input name="type" type="hidden" value="remote" />
+            <input name="name" placeholder="Имя" value="" />
+            <input name="login" placeholder="Логин" value="" />
+            <input name="email" type="email" placeholder="EMail" value="" />
+            <button>Добавить</button>
+        </form>
+        <h2>ИЛИ</h2><br />
+        <h2>Добавить локального пользователя:</h2>
+        <form method="POST">
+            <input name="type" type="hidden" value="local" />
+            <input name="remoteId" placeholder="Удаленный ID" value="" />
+            <input name="balance" placeholder="Баланс" value="" />
+            <button>Добавить</button>
+        </form>
+    </h:body>
+</html>
+
